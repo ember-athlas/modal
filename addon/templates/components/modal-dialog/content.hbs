@@ -1,0 +1,19 @@
+{{#if custom}}
+	{{yield (hash
+		header=(component dialog.headerComponent dialog=dialog title=dialog.title closeButton=dialog.closeButton)
+		body=(component dialog.bodyComponent dialog=dialoge)
+		footer=(component dialog.footerComponent dialog=dialog)
+	)}}
+{{else}}
+	{{#if header}}
+		{{component dialog.headerComponent dialog=dialog title=dialog.title closeButton=dialog.closeButton}}
+	{{/if}}
+
+	{{#component dialog.bodyComponent dialog=dialog}}
+		{{yield}}
+	{{/component}}
+
+	{{#if footer}}
+		{{component dialog.footerComponent dialog=dialog}}
+	{{/if}}
+{{/if}}

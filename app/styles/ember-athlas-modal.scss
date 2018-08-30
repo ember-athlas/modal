@@ -1,0 +1,43 @@
+$athlas-modal-zindex: 1050 !default;
+
+.modal-dialog-active {
+	z-index: ($athlas-modal-zindex + 5);
+}
+
+.modal-dialog-inactive {
+
+	.modal-content {
+		position: relative;
+	}
+
+	.modal-content::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #000;
+		opacity: 0.5;
+	}
+}
+
+.modal {
+	max-height: calc(100vh - 10px);
+	overflow: hidden !important;
+
+	&-header, &-body, &-footer {
+		padding: 12px;
+	}
+
+	&-body {
+		overflow-x: hidden;
+		overflow-y: auto;
+		max-height: calc(100vh - 10px - 135px);
+	}
+
+	button.close:focus {
+		outline: none;
+	}
+}

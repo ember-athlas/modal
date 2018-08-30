@@ -1,0 +1,5 @@
+{{yield}}
+
+{{#each dialog.buttonsSupervised as |button|}}
+<button type={{button.type}} class="btn {{button.class}}" disabled={{button.disabled}} {{action 'button' button}}>{{button.label}}</button>
+{{/each}}

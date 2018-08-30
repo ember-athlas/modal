@@ -1,0 +1,5 @@
+<div class="modal-dialog {{sizeClass}}" role="document">
+	{{#component contentComponent custom=hasBlockParams dialog=this id=(concat id '-content') as |content|}}
+		{{yield content}}
+	{{/component}}
+</div>

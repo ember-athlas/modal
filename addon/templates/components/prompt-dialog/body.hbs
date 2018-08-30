@@ -1,0 +1,7 @@
+<div class="form-group">
+	<label for={{concat dialog.elementId '-input'}}>{{dialog.message}}</label>
+	{{input value=dialog.value class="form-control" id=(concat dialog.elementId '-input') required=dialog.required}}
+	<div class="invalid-feedback">
+		{{dialog.errorMessage}}
+	</div>
+</div>
